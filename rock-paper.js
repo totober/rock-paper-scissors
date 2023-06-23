@@ -1,7 +1,34 @@
+// DOM STUFF //
 
-function getUserChoice () {
+/* let buttons = document.querySelectorAll("button");
+console.log(buttons)
 
- let userValue = prompt("Choose your weapon: rock, paper or scissors").toLowerCase();
+buttons.forEach(button => {
+
+  let buttonName = button.textContent;
+  console.log(buttonName)
+
+  button.addEventListener("click", getUserChoice)
+
+})  */
+
+// let rock = document.getElementById("rock");
+// let paper = document.getElementById("paper");
+// let scissors = document.getElementById("scissors");
+
+
+// rock.addEventListener("click", getUserChoice);
+// paper.addEventListener("click", getUserChoice);
+// scissors.addEventListener("click", getUserChoice);
+
+// let name = 
+
+
+function getUserChoice (e) {
+
+//  let userValue = e.target.textContent;
+//  console.log(userValue)
+let userValue = prompt("choose")
 
  return userValue
 }
@@ -22,13 +49,15 @@ console.log(machineChoice);
 
   let userCounter = 0;
   let machineCounter = 0;
-  let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
+
 
 function play(userChoice, machineChoice) {
 
   if (userChoice === machineChoice){ 
-   
-   return console.log("Its a tie!") ;
+
+   console.log("Its a tie!");
+
+   return  userCounter += 0;
     
   } else if (userChoice === "rock" && machineChoice === "scissors"){
     
@@ -59,32 +88,37 @@ function play(userChoice, machineChoice) {
     
 
 let roundResult = play(userChoice, machineChoice);
-console.log(roundResult);
 
-function game() {
-  play(getUserChoice(),getMachineChoice());
-  console.log(userCounter);
-  console.log(machineCounter);
-  play(getUserChoice(),getMachineChoice());
-  console.log(userCounter);
-  console.log(machineCounter); 
-  play(getUserChoice(),getMachineChoice());
-  console.log(userCounter);
-  console.log(machineCounter);
-  play(getUserChoice(),getMachineChoice());
-  console.log(userCounter);
-  console.log(machineCounter);
-  play(getUserChoice(),getMachineChoice());
-  console.log(userCounter);
-  console.log(machineCounter);
- 
 
-if (userCounter>machineCounter) {
-  return "Congrats! you win"
-} else if (machineCounter>userCounter) {
-  return "Too bad! you lose"
-} else {
-  return "Wow! its a tie"
-}
+let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
+ console.log(finalScore);
 
-}
+
+
+// con esto intento que el juego se reinicie una vez terminadas las 5 rondas, pero no lo consigo.
+//siguen sumandose.. tocara ver mas adelante.
+
+/* function game() {
+
+  for (let i=1; i <= 5; i++ ){
+    play(getUserChoice(), getMachineChoice());
+    console.log(userCounter);
+    console.log(machineCounter);
+
+  }
+
+  let total = `User score  ${userCounter} Machine score ${machineCounter}`;
+  
+  if (userCounter>machineCounter) {
+    return total += " Congrats! you win"
+  } else if (machineCounter>userCounter) {
+    return total += " Too bad! you lose"
+  } else {
+    return total += " Wow! its a tie"
+  }
+
+}  */
+
+
+
+
