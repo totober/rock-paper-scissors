@@ -1,36 +1,9 @@
-// DOM STUFF //
 
-/* let buttons = document.querySelectorAll("button");
-console.log(buttons)
+function getUserChoice () {
 
-buttons.forEach(button => {
+let userValue = prompt("Choose your weapon: rock, paper or scissors").toLowerCase();
 
-  let buttonName = button.textContent;
-  console.log(buttonName)
-
-  button.addEventListener("click", getUserChoice)
-
-})  */
-
-// let rock = document.getElementById("rock");
-// let paper = document.getElementById("paper");
-// let scissors = document.getElementById("scissors");
-
-
-// rock.addEventListener("click", getUserChoice);
-// paper.addEventListener("click", getUserChoice);
-// scissors.addEventListener("click", getUserChoice);
-
-// let name = 
-
-
-function getUserChoice (e) {
-
-//  let userValue = e.target.textContent;
-//  console.log(userValue)
-let userValue = prompt("choose")
-
- return userValue
+  return userValue
 }
 
 let userChoice = getUserChoice();
@@ -98,7 +71,7 @@ let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
 // con esto intento que el juego se reinicie una vez terminadas las 5 rondas, pero no lo consigo.
 //siguen sumandose.. tocara ver mas adelante.
 
-/* function game() {
+function game() {
 
   for (let i=1; i <= 5; i++ ){
     play(getUserChoice(), getMachineChoice());
@@ -117,7 +90,7 @@ let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
     return total += " Wow! its a tie"
   }
 
-}  */
+} 
 
 
 
