@@ -15,12 +15,23 @@ console.log(buttons)
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
-//let container = document.getElementById("main")
+let container = document.getElementById("main");
+let divResult = document.getElementById("result");
+
 
 
 rock.addEventListener("click", play);
 paper.addEventListener("click", play);
 scissors.addEventListener("click", play);
+
+function createPara () {
+  let para = document.createElement("p");
+  para.className = "para";
+  para.textContent = paraValue;
+  divResult.appendChild(para);
+} 
+
+
 
 //container.addEventListener("click", helper);
 
@@ -41,10 +52,9 @@ let userValue = e.target.textContent;
 
 
 
-
-
-   let userCounter = 0;
+  let userCounter = 0;
   let machineCounter = 0; 
+  let paraValue = "";
 
 
 function play(e) {
@@ -65,42 +75,55 @@ let machineChoice = getMachineChoice();
 
   if (userChoice === machineChoice){ 
 
-   console.log("Its a tie!");
+   paraValue = "Its a tie!";
 
+   createPara();
+  
    return  userCounter += 0;
     
   } else if (userChoice === "rock" && machineChoice === "scissors"){
     
-    console.log("You win! rock beats scissors");
+    paraValue = "You win! rock beats scissors";
    //return "You win! rock beats scissors";
+   createPara();
     return  userCounter += 1
   } else if (userChoice === "paper" && machineChoice === "rock"){
 
-    console.log("You win! paper beats rock");
+    paraValue = "You win! paper beats rock";
     //return "You win! paper beats rock";
+    createPara();
     return  userCounter += 1
 
   } else if (userChoice === "scissors" && machineChoice === "paper"){
     
-    console.log("You win! scissors beat paper");
+    paraValue = "You win! scissors beat paper";
     //return "You win! scissors beat paper";
+    createPara();
     return userCounter += 1
 
   } else {
     
-    console.log(`You lose! ${machineChoice} beats ${userChoice}`);
+    paraValue = `You lose! ${machineChoice} beats ${userChoice}`;
    //return `You lose! ${machineChoice} beats ${userChoice}`;
+   createPara();
    return machineCounter += 1
 
   }
 
+  
 
  
 }
-    
+
+
+console.log(1);
+console.log(paraValue);
 
 let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
  console.log(finalScore);
+
+
+
 
 
 
