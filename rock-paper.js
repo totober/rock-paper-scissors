@@ -1,43 +1,59 @@
 // DOM STUFF //
 
-/* let buttons = document.querySelectorAll("button");
+/*  let buttons = document.querySelectorAll("button");
 console.log(buttons)
 
-buttons.forEach(button => {
+ buttons.forEach(button => {
 
   let buttonName = button.textContent;
   console.log(buttonName)
 
   button.addEventListener("click", getUserChoice)
 
-})  */
+})   */
 
-// let rock = document.getElementById("rock");
-// let paper = document.getElementById("paper");
-// let scissors = document.getElementById("scissors");
-
-
-// rock.addEventListener("click", getUserChoice);
-// paper.addEventListener("click", getUserChoice);
-// scissors.addEventListener("click", getUserChoice);
-
-// let name = 
+let rock = document.getElementById("rock");
+let paper = document.getElementById("paper");
+let scissors = document.getElementById("scissors");
+//let container = document.getElementById("main")
 
 
+rock.addEventListener("click", play);
+paper.addEventListener("click", play);
+scissors.addEventListener("click", play);
+
+//container.addEventListener("click", helper);
+
+
+
+/* 
 function getUserChoice (e) {
 
-//  let userValue = e.target.textContent;
-//  console.log(userValue)
-let userValue = prompt("choose")
-
+let userValue = e.target.textContent;
  return userValue
-}
+} */
 
-let userChoice = getUserChoice();
 
-console.log(userChoice);
 
-function getMachineChoice () {
+//let userChoice = getUserChoice();
+
+
+
+
+
+
+
+   let userCounter = 0;
+  let machineCounter = 0; 
+
+
+function play(e) {
+  
+
+let userChoice = e.target.textContent;
+
+
+  function getMachineChoice () {
     let values = ["rock", "paper", "scissors"];
     let randomValue = values[Math.floor(Math.random()* values.length)]; 
     return randomValue;
@@ -45,13 +61,7 @@ function getMachineChoice () {
 
 let machineChoice = getMachineChoice();
 
-console.log(machineChoice);
 
-  let userCounter = 0;
-  let machineCounter = 0;
-
-
-function play(userChoice, machineChoice) {
 
   if (userChoice === machineChoice){ 
 
@@ -84,26 +94,25 @@ function play(userChoice, machineChoice) {
 
   }
 
-  }
+
+ 
+}
     
-
-let roundResult = play(userChoice, machineChoice);
-
 
 let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
  console.log(finalScore);
 
 
 
+
+
 // con esto intento que el juego se reinicie una vez terminadas las 5 rondas, pero no lo consigo.
 //siguen sumandose.. tocara ver mas adelante.
 
-/* function game() {
+/*  function game() {
 
   for (let i=1; i <= 5; i++ ){
-    play(getUserChoice(), getMachineChoice());
-    console.log(userCounter);
-    console.log(machineCounter);
+    play();
 
   }
 
