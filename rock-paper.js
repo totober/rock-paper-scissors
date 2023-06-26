@@ -34,7 +34,7 @@ function createScorer () {
   let paraScore = document.createElement("p");
   paraScore.className = "scorer";
   paraScore.textContent = `User score  ${userCounter} Machine score ${machineCounter}`;
-   divResult.appendChild(paraScore);
+  divResult.appendChild(paraScore);
 
     if (userCounter === 5) {
      let finalScoreUser = document.createElement("p")
@@ -51,7 +51,6 @@ function createScorer () {
     userCounter = 0;
   }
   
- 
 
 } 
 
@@ -106,7 +105,7 @@ let machineChoice = getMachineChoice();
    paraValue = "Its a tie!";
 
    createPara();
-  createScorer();
+   createScorer();
    userCounter += 0;
    
     
