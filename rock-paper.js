@@ -19,7 +19,6 @@ let container = document.getElementById("main");
 let divResult = document.getElementById("result");
 
 
-
 rock.addEventListener("click", play);
 paper.addEventListener("click", play);
 scissors.addEventListener("click", play);
@@ -31,36 +30,65 @@ function createPara () {
   divResult.appendChild(para);
 } 
 
+function createScorer () {
+  let paraScore = document.createElement("p");
+  paraScore.className = "scorer";
+  paraScore.textContent = `User score  ${userCounter} Machine score ${machineCounter}`;
+   divResult.appendChild(paraScore);
+
+    if (userCounter === 5) {
+     let finalScoreUser = document.createElement("p")
+     finalScoreUser.textContent = "Congrats! you win the game!"
+     divResult.appendChild(finalScoreUser);
+     userCounter = 0; 
+     machineCounter = 0;   
+
+  } else if (machineCounter === 5) {
+    let finalScoreMachine = document.createElement("p")
+    finalScoreMachine.textContent = "Oh no! you lose the game!"
+    divResult.appendChild(finalScoreMachine); 
+    machineCounter = 0; 
+    userCounter = 0;
+  }
+  
+ 
+
+} 
+
+/* function createFinalPara () {
+  let paraFinal = document.createElement("p");
+  paraFinal.className = "paraFinal";
+  para.textContent = total;
+  divResult.appendChild(paraFinal);
+} */
+
 
 
 //container.addEventListener("click", helper);
 
 
 
-/* 
-function getUserChoice (e) {
-
-let userValue = e.target.textContent;
- return userValue
-} */
-
-
-
-//let userChoice = getUserChoice();
-
-
-
 
 
   let userCounter = 0;
+  console.log(userCounter)
   let machineCounter = 0; 
+  console.log(machineCounter)
   let paraValue = "";
+
+
 
 
 function play(e) {
   
 
-let userChoice = e.target.textContent;
+  function getUserChoice () {
+
+    let userValue = e.target.textContent;
+     return userValue
+    } 
+        
+let userChoice = getUserChoice();
 
 
   function getMachineChoice () {
@@ -78,68 +106,63 @@ let machineChoice = getMachineChoice();
    paraValue = "Its a tie!";
 
    createPara();
-  
-   return  userCounter += 0;
+  createScorer();
+   userCounter += 0;
+   
     
   } else if (userChoice === "rock" && machineChoice === "scissors"){
     
     paraValue = "You win! rock beats scissors";
    //return "You win! rock beats scissors";
    createPara();
-    return  userCounter += 1
+   
+    userCounter += 1
+    createScorer();
   } else if (userChoice === "paper" && machineChoice === "rock"){
 
     paraValue = "You win! paper beats rock";
     //return "You win! paper beats rock";
     createPara();
-    return  userCounter += 1
+    
+    userCounter += 1
+    createScorer();
 
   } else if (userChoice === "scissors" && machineChoice === "paper"){
     
     paraValue = "You win! scissors beat paper";
     //return "You win! scissors beat paper";
     createPara();
-    return userCounter += 1
+    
+    userCounter += 1
+    createScorer();
 
   } else {
     
     paraValue = `You lose! ${machineChoice} beats ${userChoice}`;
    //return `You lose! ${machineChoice} beats ${userChoice}`;
    createPara();
-   return machineCounter += 1
-
-  }
-
   
-
+    machineCounter += 1
+    
+    createScorer();
+  }
  
 }
-
-
-console.log(1);
-console.log(paraValue);
-
-let finalScore = `User score ${userCounter}, Machine score ${machineCounter}`;
- console.log(finalScore);
-
-
-
-
-
 
 
 
 // con esto intento que el juego se reinicie una vez terminadas las 5 rondas, pero no lo consigo.
 //siguen sumandose.. tocara ver mas adelante.
 
-/*  function game() {
+
+/* function game() {
 
   for (let i=1; i <= 5; i++ ){
-    play();
 
+    play();
   }
 
-  let total = `User score  ${userCounter} Machine score ${machineCounter}`;
+let total = `User score  ${userCounter} Machine score ${machineCounter}`;
   
   if (userCounter>machineCounter) {
     return total += " Congrats! you win"
