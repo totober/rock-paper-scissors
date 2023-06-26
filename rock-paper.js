@@ -103,9 +103,6 @@ let machineChoice = getMachineChoice();
   if (userChoice === machineChoice){ 
 
    paraValue = "Its a tie!";
-
-   createPara();
-   createScorer();
    userCounter += 0;
    
     
@@ -113,38 +110,33 @@ let machineChoice = getMachineChoice();
     
     paraValue = "You win! rock beats scissors";
    //return "You win! rock beats scissors";
-   createPara();
    
     userCounter += 1
-    createScorer();
   } else if (userChoice === "paper" && machineChoice === "rock"){
 
     paraValue = "You win! paper beats rock";
     //return "You win! paper beats rock";
-    createPara();
     
     userCounter += 1
-    createScorer();
 
   } else if (userChoice === "scissors" && machineChoice === "paper"){
     
     paraValue = "You win! scissors beat paper";
     //return "You win! scissors beat paper";
-    createPara();
     
     userCounter += 1
-    createScorer();
 
   } else {
     
     paraValue = `You lose! ${machineChoice} beats ${userChoice}`;
    //return `You lose! ${machineChoice} beats ${userChoice}`;
-   createPara();
   
     machineCounter += 1
-    
-    createScorer();
+
   }
+
+  createPara();
+  createScorer();
  
 }
 
